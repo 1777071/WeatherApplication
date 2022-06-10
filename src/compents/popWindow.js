@@ -10,7 +10,7 @@ const PopWindow = (pop,setPop,city) => {
         setContext(val);
     };
     const saveContext = () =>{
-        console.log("这里放一个API");
+        console.log("Put API here");
     }
     useEffect(()=>{
 

@@ -55,31 +55,6 @@ function AddToList({data}){
         }
     },[])
 
-    // const handleSubmit=async(event)=>{
-    //     await list.every((city)=> {
-    //         if (city === singleCity) {
-    //             setExist(true);
-    //             return false;
-    //         }
-    //     });
-    //     console.log(exist);
-    //     console.log(list);
-    //     if(!exist) {
-    //         singleCity.id = indexes + 1;
-    //         list.push(singleCity);
-    //         setList(list);
-    //         setSingleCity({
-    //             id: indexes + 1,
-    //             city: event.target.value
-    //         });
-    //         setIndexes(indexes + 1);
-    //         event.preventDefault();
-    //         setExist(false);
-    //         console.log(list);
-    //     }
-    //
-    // }
-
    const handleSubmit=(event)=>{
        singleCity.id = indexes + 1;
        list.push(singleCity);
@@ -92,9 +67,7 @@ function AddToList({data}){
        event.preventDefault();
        console.log(singleCity);
    }
-  // useEffect(()=>{
-  //      handleSubmit(event)
-  //  },[exist])
+
     const handleSearch=(event)=>{
         let keywords=event.target.value;
         setKey(keywords)

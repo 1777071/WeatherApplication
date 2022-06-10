@@ -6,7 +6,6 @@ import useStyles from "./searchStyle.style";
 const URLSearch= `https://api.openweathermap.org/data/2.5/weather`
 const API_SEARCH=`778759979311b061bf5ccf5f21bd59ac`
 function Search({data}){
-    //rename unnecessary
     let city=data;
     const [temperature,setTemperature]=useState(null);
     const classes = useStyles();
