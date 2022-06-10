@@ -23,13 +23,15 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 
-### effect picture
+### Effect picture
 Users could get the city weather information after clicking the search button.(The first character of the city name should be uppercase).
 ![1654862430(1)](https://user-images.githubusercontent.com/61669688/173060084-b6d2e76c-89e2-4b89-8ca9-cc327c29a8f2.png)
 
-User could add the city detials to the list through clicking the  'add to list' button () 
+Users could add the city details to the list by clicking the  'add to list' button. 
 
-The order of the list could change through dragging
+The order of the list could change through dragging.
+
+The background picture could be a different with the change of the input city name.
 
 ### current problems
 *Lack of backend the add note function can not work.
