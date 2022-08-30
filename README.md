@@ -34,7 +34,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ### Effect picture
 Users could get the city weather information after clicking the search button.(The first character of the city name should be uppercase).
-![1654862430(1)](https://user-images.githubusercontent.com/61669688/173060084-b6d2e76c-89e2-4b89-8ca9-cc327c29a8f2.png)
+![1661835617361](https://user-images.githubusercontent.com/61669688/187353073-30bbc4f1-798f-4612-a080-bd6e8cb09892.png)
 
 Users could add the city details to the list by clicking the  'add to list' button. 
 
