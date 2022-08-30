@@ -45,7 +45,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ### current problems
 *Lack of backend the add note function can not work.
-*One city would add to the list twice.
 
 ## Learn More
 
