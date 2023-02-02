@@ -27,9 +27,9 @@ const useStyles = makeStyles(() => createStyles({
         fontWeight: 'bold',
     },
     input: {
-        position: 'relative',
-        left:'-180px',
-        top:'30px',
+        // position: 'relative',
+        // left:'-180px',
+        // top:'30px',
         border: '1px solid #ccc',
         borderRadius: '3px',
         width: '240px',
@@ -37,10 +37,10 @@ const useStyles = makeStyles(() => createStyles({
         fontWeight: '500',
     },
     addButton: {
-        position: 'relative',
-        top: '60px',
+        // position: 'relative',
+        // top: '60px',
         fontSize:'18px',
-        left: '80px'
+        // left: '80px'
     }
 }));
 export default useStyles;
