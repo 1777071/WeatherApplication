@@ -1,22 +1,29 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Dialog, DialogContent} from "@mui/material";
 import {Button, TextField} from "@material-ui/core";
 
-const PopWindow = (pop,setPop,city) => {
+const PopWindow = ({pop, setPop, city}) => {
+    // console.log("setPop is:",setPop);
     const [open, setOpen] = useState(pop);
+    console.log("the open detail is: ", open)
     const [context, setContext] = useState('');
-    const handleContextChange = (event:ChangeEvent<HTMLInputElement>) => {
+    const handleContextChange = (event: ChangeEvent<HTMLInputElement>) => {
         const val = event.target.value;
         setContext(val);
     };
-    const saveContext = () =>{
+
+    const closeWindow = () => {
+        setOpen(false);
+        setPop(false);
+    }
+    const saveContext = () => {
         console.log("Put API here");
     }
-    useEffect(()=>{
+    useEffect(() => {
 
-    },[open])
+    }, [open])
 
-    return(
+    return (
         <div>
             <Dialog open={open}>
                 <DialogContent>
@@ -38,7 +45,7 @@ const PopWindow = (pop,setPop,city) => {
                         fullWidth
                         variant="contained"
                         size="small"
-                        onClick={()=>{
+                        onClick={() => {
                             setContext('')
                         }
                         }
@@ -50,7 +57,7 @@ const PopWindow = (pop,setPop,city) => {
                         fullWidth
                         variant="contained"
                         size="small"
-                        onClick={()=>{
+                        onClick={() => {
                             saveContext();
                         }}
                     >
@@ -59,8 +66,8 @@ const PopWindow = (pop,setPop,city) => {
                     <Button
                         fullWidth
                         size="large"
-                        onClick={()=>{
-                            setOpen(false);
+                        onClick={() => {
+                            closeWindow();
                         }}
 
                     >

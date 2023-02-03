@@ -2,13 +2,10 @@ import React, {useEffect, useRef, useState} from 'react';
 import useStyles from "./subList.style";
 import SearchCity from "../../Search/search";
 import PopWindow from "../../popWindow";
-// import SearchCity from "../Search/search";
-// import PopWindow from "../popWindow";
 
-const SubList = (cityList) => {
-    // console.log(cityList.cityList);
+const SubList = ({list, removeCity, setList}) => {
+
     const classes = useStyles();
-    const [list, setList] = useState(cityList.cityList);
     const [dragging, setDragging] = useState(false);
     const [pop, setPop] = useState(false);
     const dragItem = useRef();
@@ -52,51 +49,44 @@ const SubList = (cityList) => {
         }
     }, []);
 
-    const removeCity = (id, event) => {
-        let result = list.filter(item => item.id !== id)
-        setList(result)
-        event.preventDefault();
-    }
+    return (
+        <>
+            {
+                list
+                    .map((item, index) => {
+                        return (
+                            <>
+                                <div
+                                    draggable
+                                    onDragStart={(e) => {
+                                        handleDragStart(e, index)
+                                    }}
+                                    onDragEnter={dragging ? (e) => {
+                                        handleDragEnter(e, index)
+                                    } : null}
+                                    key={item.id}
+                                    className={classes.cardContainer}
+                                >
+                                    <div className={classes.wordStyle}>
+                                        {index + 1}. {item.city}
+                                    </div>
+                                    <SearchCity data={item.city}/>
+                                    <button onClick={() => {
+                                        setPop(true)
+                                    }}> Add notes
+                                    </button>
 
-    return(
-       <>
-           {/*{console.log("the list is:")}*/}
-           {/*{console.log(list)}*/}
-           {
-               list
-                   .map((item, index) => {
-                       return (
-                           <>
-                               <div
-                                   draggable
-                                   onDragStart={(e) => {
-                                       handleDragStart(e, index)
-                                   }}
-                                   onDragEnter={dragging ? (e) => {
-                                       handleDragEnter(e, index)
-                                   } : null}
-                                   key={item.id}
-                                   className={classes.cardContainer}
-                               >
-                                   <div className={classes.wordStyle}>
-                                       {index + 1}. {item.city}
-                                   </div>
-                                   <SearchCity data={item.city}/>
-                                   <button onClick={() => {
-                                       setPop(true)
-                                   }}> Add notes
-                                   </button>
-                                   <div>
-                                       {pop ? <PopWindow pop={pop} setPop={setPop} city={item.city}/> : () => {
-                                       }}
-                                   </div>
-                                   <a href="#" onClick={removeCity.bind(this, item.id)}>delete</a>
-                               </div>
-                           </>
-                       )
-                   })
-           }
-           </>
+                                    <div>
+                                        {pop ? <PopWindow pop={pop} setPop={setPop} city={item.city}/> : () => {
+                                        }}
+                                    </div>
+                                    <a href="#" onClick={removeCity.bind(this, item.id)}>delete</a>
+                                </div>
+                            </>
+                        )
+                    })
+            }
+        </>
     )
 }
 

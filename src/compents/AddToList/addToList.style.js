@@ -1,4 +1,4 @@
-import { createStyles, makeStyles } from '@material-ui/core';
+import {createStyles, makeStyles} from '@material-ui/core';
 
 const useStyles = makeStyles(() => createStyles({
     cardContainer: {
@@ -39,7 +39,7 @@ const useStyles = makeStyles(() => createStyles({
     addButton: {
         // position: 'relative',
         // top: '60px',
-        fontSize:'18px',
+        fontSize: '18px',
         // left: '80px'
     }
 }));

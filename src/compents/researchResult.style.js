@@ -1,8 +1,8 @@
-import { createStyles, makeStyles } from '@material-ui/core';
+import {createStyles, makeStyles} from '@material-ui/core';
 
 const useStyles = makeStyles(() => createStyles({
     resultHeader: {
-        position:'relative',
+        position: 'relative',
         left: '50px',
         fontSize: '25px',
     },
